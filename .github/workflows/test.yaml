@@ -26,5 +26,6 @@ jobs:
           fetch-depth: 0
       - uses: docker/build-push-action@v5
         with:
+          no-cache: true
           push: false
           tags: codekoala/test-image:latest
