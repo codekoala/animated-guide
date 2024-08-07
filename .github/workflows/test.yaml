@@ -26,6 +26,11 @@ jobs:
           fetch-depth: 0
       - uses: docker/build-push-action@v5
         with:
+          network: host
+          build-args:
+            - POSTGRES_HOST=localhost
+            - POSTGRES_PORT=5432
+            - POSTGRES_PASSWORD=postgres
           no-cache: true
           push: false
           tags: codekoala/test-image:latest
